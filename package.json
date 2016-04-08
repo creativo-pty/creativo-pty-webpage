@@ -1,0 +1,21 @@
+{
+  "name": "creativo-pty-website",
+  "version": "0.1.0",
+  "description": "This is the code that powers the Creativo PTY website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativo-pty/creativo-pty-website.git"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Christopher Duncan <cj.duncan.a@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/creativo-pty/creativo-pty-website/issues"
+  },
+  "homepage": "http://github.com/creativo-pty/creativo-pty-website#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
