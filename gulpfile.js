@@ -7,18 +7,21 @@ var html = 'app/*.html';
 var css = 'app/styles/*.css';
 var js = 'app/scripts/*.js';
 
-// Letting Browser Sync know that the root of the server is found in the 'app'
-// folder.
+// Setting up the Browser Sync server
 gulp.task('browserSync', function() {
     bs.init({
+        // Server base directory
         server:                 './dist',
+        // Try to connect to the tunnel service of the following name
         tunnel:                 'creativopty',
+        // The manner in which the project opens once the server starts
         open:                   'tunnel',
+        // Should all the screens connected to this server scroll together
         scrollProportionally:   false
     });
 });
 
-// Definig what should happen if any file changes.
+// Defining what should happen if any file changes
 gulp.task('default', ['browserSync'], function() {
     // When an html file changes
     gulp.watch(html, ['html']);
