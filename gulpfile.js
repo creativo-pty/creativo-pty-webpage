@@ -4,6 +4,7 @@ var bs = require('browser-sync').create();
 var nunjucksRender = require('gulp-nunjucks-render');
 var htmlhint = require('gulp-htmlhint');
 var csslint = require('gulp-csslint');
+var stylelint = require('gulp-stylelint');
 var jshint = require('gulp-jshint');
 var sort = require('gulp-sort');
 var uncss = require('gulp-uncss');
@@ -122,7 +123,9 @@ gulp.task('css-lint', function() {
     // Use CSS Lint to validate this CSS file
     .pipe(csslint())
     // Fail this task if there is an error
-    .pipe(csslint.failReporter());
+    .pipe(csslint.failReporter())
+    // Use Stylelint to validate this CSS file
+    .pipe(stylelint({ failAfterError: true }));
 });
 
 // Tasks done to js files
