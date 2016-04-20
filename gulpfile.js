@@ -2,6 +2,7 @@
 var gulp = require('gulp');
 var bs = require('browser-sync').create();
 var nunjucksRender = require('gulp-nunjucks-render');
+var htmlhint = require('gulp-htmlhint');
 
 // Relevant directories
 var html = 'app/*.html';
@@ -38,6 +39,10 @@ gulp.task('default', ['browserSync'], function() {
 // Tasks done to html files
 gulp.task('html', function() {
     return gulp.src(html)
+        // Use HTML Hint to validate the HTML file
+        .pipe(htmlhint())
+        // Fail this task if there is an error
+        .pipe(htmlhint.failReporter())
         // Copy app file to dist
         .pipe(gulp.dest('dist'))
         // Reload the dist file in the browser
@@ -71,6 +76,34 @@ gulp.task('nunjucks', function() {
         // Location of templates in the project
         path: ['app/templates/']
     }))
+    // Use HTML Hint to validate the HTML file
+    .pipe(htmlhint({
+        "tagname-lowercase": true,
+        "attr-lowercase": true,
+        "attr-value-double-quotes": true,
+        "attr-value-not-empty": true,
+        "attr-no-duplication": true,
+        "doctype-first": true,
+        "tag-pair": true,
+        "tag-self-close": true,
+        "spec-char-escape": true,
+        "id-unique": true,
+        "src-not-empty": true,
+        "title-require": true,
+        "head-script-disabled": true,
+        "alt-require": true,
+        "doctype-html5": true,
+        "id-class-value": "dash",
+        "style-disabled": true,
+        "inline-style-disabled": true,
+        "inline-script-disabled": true,
+        "space-tab-mixed-disabled": "space",
+        "id-class-ad-disabled": true,
+        "href-abs-or-rel": "rel",
+        "attr-unsafe-chars": true
+    }))
+    // Fail this task if there is an error
+    .pipe(htmlhint.failReporter())
     // Output files into the dist folder
     .pipe(gulp.dest('dist'))
     // Reload the dist file in the browser
