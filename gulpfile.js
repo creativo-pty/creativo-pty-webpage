@@ -13,7 +13,7 @@ var njk = 'app/templates/**/*.njk';
 gulp.task('browserSync', function() {
     bs.init({
         // Server base directory
-        server:                 './dist',
+        server:                 'dist',
         // Try to connect to the tunnel service of the following name
         tunnel:                 'creativopty',
         // The manner in which the project opens once the server starts
@@ -25,11 +25,11 @@ gulp.task('browserSync', function() {
 
 // Defining what should happen if any file changes
 gulp.task('default', ['browserSync'], function() {
-    // When an html file changes
+    // When an HTML file changes
     gulp.watch(html, ['html']);
-    // When an css file changes
+    // When a CSS file changes
     gulp.watch(css, ['css']);
-    // When an js file changes
+    // When a JS file changes
     gulp.watch(js, ['js']);
     //When a Nunjucks file changes
     gulp.watch(njk, ['nunjucks']);
@@ -64,14 +64,14 @@ gulp.task('js', function() {
 
 // Convert Nunjucks templates into HTML files
 gulp.task('nunjucks', function() {
-    // Gets .html and .nunjucks files in pages
+    // Gets .html, .nunjucks, and .njk files in templates
     return gulp.src('app/templates/**/*.+(html|nunjucks|njk)')
     // Renders template with nunjucks
     .pipe(nunjucksRender({
         // Location of templates in the project
         path: ['app/templates/']
     }))
-    // output files in app folder
+    // Output files into the dist folder
     .pipe(gulp.dest('dist'))
     // Reload the dist file in the browser
     .pipe(bs.stream());
