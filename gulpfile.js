@@ -5,6 +5,7 @@ var nunjucksRender = require('gulp-nunjucks-render');
 var htmlhint = require('gulp-htmlhint');
 var csslint = require('gulp-csslint');
 var jshint = require('gulp-jshint');
+var sort = require('gulp-sort');
 
 // Relevant directories
 var html = 'app/*.html';
@@ -91,6 +92,8 @@ gulp.task('html', function() {
 // Tasks done to css files
 gulp.task('css', function() {
     return gulp.src(css)
+        // Sort files in alphabetical order
+        .pipe(sort())
         // Use CSS Lint to validate this CSS file
         .pipe(csslint())
         // Fail this task if there is an error
@@ -104,6 +107,8 @@ gulp.task('css', function() {
 // Tasks done to js files
 gulp.task('js', function() {
     return gulp.src(js)
+        // Sort files in alphabetical order
+        .pipe(sort())
         // Use JS Hint to validate this JS file
         .pipe(jshint())
         // Report using JS Hint default reporter
