@@ -17,6 +17,7 @@
   "homepage": "http://github.com/creativo-pty/creativo-pty-website#readme",
   "devDependencies": {
     "browser-sync": "^2.11.2",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-nunjucks-render": "^2.0.0"
   }
 }

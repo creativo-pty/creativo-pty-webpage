@@ -1,11 +1,13 @@
 // Modules used in this project.
 var gulp = require('gulp');
 var bs = require('browser-sync').create();
+var nunjucksRender = require('gulp-nunjucks-render');
 
 // Relevant directories
 var html = 'app/*.html';
 var css = 'app/styles/*.css';
 var js = 'app/scripts/*.js';
+var njk = 'app/templates/**/*.njk';
 
 // Setting up the Browser Sync server
 gulp.task('browserSync', function() {
@@ -29,6 +31,8 @@ gulp.task('default', ['browserSync'], function() {
     gulp.watch(css, ['css']);
     // When an js file changes
     gulp.watch(js, ['js']);
+    //When a Nunjucks file changes
+    gulp.watch(njk, ['nunjucks']);
 });
 
 // Tasks done to html files
@@ -56,4 +60,19 @@ gulp.task('js', function() {
         .pipe(gulp.dest('dist/scripts'))
         // Reload the dist file in the browser
         .pipe(bs.stream());
+});
+
+// Convert Nunjucks templates into HTML files
+gulp.task('nunjucks', function() {
+    // Gets .html and .nunjucks files in pages
+    return gulp.src('app/templates/**/*.+(html|nunjucks|njk)')
+    // Renders template with nunjucks
+    .pipe(nunjucksRender({
+        // Location of templates in the project
+        path: ['app/templates/']
+    }))
+    // output files in app folder
+    .pipe(gulp.dest('dist'))
+    // Reload the dist file in the browser
+    .pipe(bs.stream());
 });
