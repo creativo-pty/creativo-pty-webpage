@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var bs = require('browser-sync').create();
 var nunjucksRender = require('gulp-nunjucks-render');
 var htmlhint = require('gulp-htmlhint');
+var csslint = require('gulp-csslint');
 
 // Relevant directories
 var html = 'app/*.html';
@@ -52,6 +53,10 @@ gulp.task('html', function() {
 // Tasks done to css files
 gulp.task('css', function() {
     return gulp.src(css)
+        // Use CSS Lint to validate this CSS file
+        .pipe(csslint())
+        // Fail this task if there is an error
+        .pipe(csslint.failReporter())
         // Copy app file to dist
         .pipe(gulp.dest('dist/styles'))
         // Reload the dist file in the browser
