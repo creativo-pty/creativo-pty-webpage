@@ -18,11 +18,16 @@
   "devDependencies": {
     "browser-sync": "^2.11.2",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
     "gulp-csslint": "^0.3.0",
+    "gulp-csso": "^2.0.0",
     "gulp-htmlhint": "^0.3.1",
     "gulp-jshint": "^2.0.0",
     "gulp-nunjucks-render": "^2.0.0",
     "gulp-sort": "^2.0.0",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-uncss": "^1.0.5",
     "jshint": "^2.9.2"
   }
 }

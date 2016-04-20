@@ -6,6 +6,11 @@ var htmlhint = require('gulp-htmlhint');
 var csslint = require('gulp-csslint');
 var jshint = require('gulp-jshint');
 var sort = require('gulp-sort');
+var uncss = require('gulp-uncss');
+var sourcemaps = require('gulp-sourcemaps');
+var concat = require('gulp-concat');
+var autoprefixer = require('gulp-autoprefixer');
+var csso = require('gulp-csso');
 
 // Relevant directories
 var html = 'app/*.html';
@@ -98,6 +103,17 @@ gulp.task('css', function() {
         .pipe(csslint())
         // Fail this task if there is an error
         .pipe(csslint.failReporter())
+        // Remove any unused CSS rules
+        .pipe(uncss({ html: ['dist/**/*.html'] }))
+        // Create a source map for future reference
+        .pipe(sourcemaps.init())
+            // Minify CSS
+            .pipe(csso())
+            // Combine all of the CSS files into one
+            .pipe(concat('main.css'))
+            // Prefix CSS rules for browser support
+            .pipe(autoprefixer({ browsers: ['> 1%'] }))
+        .pipe(sourcemaps.write())
         // Copy app file to dist
         .pipe(gulp.dest('dist/styles'))
         // Reload the dist file in the browser
