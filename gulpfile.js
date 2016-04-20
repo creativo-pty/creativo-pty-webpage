@@ -14,7 +14,7 @@ var csso = require('gulp-csso');
 
 // Relevant directories
 var html = 'app/*.html';
-var css = 'app/styles/*.css';
+var css = 'app/styles/**/*.css';
 var js = 'app/scripts/*.js';
 var njk = 'app/templates/**/*.njk';
 
@@ -95,14 +95,10 @@ gulp.task('html', function() {
 });
 
 // Tasks done to css files
-gulp.task('css', function() {
+gulp.task('css', ['css-lint'], function() {
     return gulp.src(css)
         // Sort files in alphabetical order
         .pipe(sort())
-        // Use CSS Lint to validate this CSS file
-        .pipe(csslint())
-        // Fail this task if there is an error
-        .pipe(csslint.failReporter())
         // Remove any unused CSS rules
         .pipe(uncss({ html: ['dist/**/*.html'] }))
         // Create a source map for future reference
@@ -118,6 +114,15 @@ gulp.task('css', function() {
         .pipe(gulp.dest('dist/styles'))
         // Reload the dist file in the browser
         .pipe(bs.stream());
+});
+
+// Lint CSS files
+gulp.task('css-lint', function() {
+    return gulp.src([ css, '!' + css.replace('/**/*.css', '/library/**/*.css') ])
+    // Use CSS Lint to validate this CSS file
+    .pipe(csslint())
+    // Fail this task if there is an error
+    .pipe(csslint.failReporter());
 });
 
 // Tasks done to js files
