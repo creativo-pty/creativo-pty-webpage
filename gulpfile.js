@@ -17,6 +17,16 @@ gulp.task('browserSync', function() {
     bs.init({
         // Server base directory
         server:                 'dist',
+        // Should all the screens connected to this server scroll together
+        scrollProportionally:   false
+    });
+});
+
+// Setting up the Browser Sync server
+gulp.task('bsTunnel', function() {
+    bs.init({
+        // Server base directory
+        server:                 'dist',
         // Try to connect to the tunnel service of the following name
         tunnel:                 'creativopty',
         // The manner in which the project opens once the server starts
