@@ -4,6 +4,7 @@ var bs = require('browser-sync').create();
 var nunjucksRender = require('gulp-nunjucks-render');
 var htmlhint = require('gulp-htmlhint');
 var csslint = require('gulp-csslint');
+var jshint = require('gulp-jshint');
 
 // Relevant directories
 var html = 'app/*.html';
@@ -90,6 +91,12 @@ gulp.task('css', function() {
 // Tasks done to js files
 gulp.task('js', function() {
     return gulp.src(js)
+        // Use JS Hint to validate this JS file
+        .pipe(jshint())
+        // Report using JS Hint default reporter
+        .pipe(jshint.reporter('default'))
+        // Fail this task if there is an error
+        .pipe(jshint.reporter('fail'))
         // Copy app file to dist
         .pipe(gulp.dest('dist/scripts'))
         // Reload the dist file in the browser
