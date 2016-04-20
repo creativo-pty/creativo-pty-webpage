@@ -12,6 +12,33 @@ var css = 'app/styles/*.css';
 var js = 'app/scripts/*.js';
 var njk = 'app/templates/**/*.njk';
 
+// Dictionaries that are used in more than one place
+var htmlHintRules = {
+    "tagname-lowercase": true,
+    "attr-lowercase": true,
+    "attr-value-double-quotes": true,
+    "attr-value-not-empty": true,
+    "attr-no-duplication": true,
+    "doctype-first": true,
+    "tag-pair": true,
+    "tag-self-close": true,
+    "spec-char-escape": true,
+    "id-unique": true,
+    "src-not-empty": true,
+    "title-require": true,
+    "head-script-disabled": true,
+    "alt-require": true,
+    "doctype-html5": true,
+    "id-class-value": "dash",
+    "style-disabled": true,
+    "inline-style-disabled": true,
+    "inline-script-disabled": true,
+    "space-tab-mixed-disabled": "space",
+    "id-class-ad-disabled": true,
+    "href-abs-or-rel": "rel",
+    "attr-unsafe-chars": true
+};
+
 // Setting up the Browser Sync server
 gulp.task('browserSync', function() {
     bs.init({
@@ -52,31 +79,7 @@ gulp.task('default', ['browserSync'], function() {
 gulp.task('html', function() {
     return gulp.src(html)
         // Use HTML Hint to validate the HTML file
-        .pipe(htmlhint({
-            "tagname-lowercase": true,
-            "attr-lowercase": true,
-            "attr-value-double-quotes": true,
-            "attr-value-not-empty": true,
-            "attr-no-duplication": true,
-            "doctype-first": true,
-            "tag-pair": true,
-            "tag-self-close": true,
-            "spec-char-escape": true,
-            "id-unique": true,
-            "src-not-empty": true,
-            "title-require": true,
-            "head-script-disabled": true,
-            "alt-require": true,
-            "doctype-html5": true,
-            "id-class-value": "dash",
-            "style-disabled": true,
-            "inline-style-disabled": true,
-            "inline-script-disabled": true,
-            "space-tab-mixed-disabled": "space",
-            "id-class-ad-disabled": true,
-            "href-abs-or-rel": "rel",
-            "attr-unsafe-chars": true
-        }))
+        .pipe(htmlhint(htmlHintRules))
         // Fail this task if there is an error
         .pipe(htmlhint.failReporter())
         // Copy app file to dist
@@ -123,31 +126,7 @@ gulp.task('nunjucks', function() {
         path: ['app/templates/']
     }))
     // Use HTML Hint to validate the HTML file
-    .pipe(htmlhint({
-        "tagname-lowercase": true,
-        "attr-lowercase": true,
-        "attr-value-double-quotes": true,
-        "attr-value-not-empty": true,
-        "attr-no-duplication": true,
-        "doctype-first": true,
-        "tag-pair": true,
-        "tag-self-close": true,
-        "spec-char-escape": true,
-        "id-unique": true,
-        "src-not-empty": true,
-        "title-require": true,
-        "head-script-disabled": true,
-        "alt-require": true,
-        "doctype-html5": true,
-        "id-class-value": "dash",
-        "style-disabled": true,
-        "inline-style-disabled": true,
-        "inline-script-disabled": true,
-        "space-tab-mixed-disabled": "space",
-        "id-class-ad-disabled": true,
-        "href-abs-or-rel": "rel",
-        "attr-unsafe-chars": true
-    }))
+    .pipe(htmlhint(htmlHintRules))
     // Fail this task if there is an error
     .pipe(htmlhint.failReporter())
     // Output files into the dist folder
