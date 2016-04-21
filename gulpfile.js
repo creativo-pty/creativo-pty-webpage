@@ -14,7 +14,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var csso = require('gulp-csso');
 
 // Relevant directories
-var html = 'app/*.html';
 var css = 'app/styles/**/*.css';
 var js = 'app/scripts/*.js';
 var njk = 'app/templates/**/*.njk';
@@ -72,27 +71,12 @@ gulp.task('bsTunnel', function() {
 
 // Defining what should happen if any file changes
 gulp.task('default', ['browserSync'], function() {
-    // When an HTML file changes
-    gulp.watch(html, ['html']);
     // When a CSS file changes
     gulp.watch(css, ['css']);
     // When a JS file changes
     gulp.watch(js, ['js']);
     //When a Nunjucks file changes
     gulp.watch(njk, ['nunjucks']);
-});
-
-// Tasks done to html files
-gulp.task('html', function() {
-    return gulp.src(html)
-        // Use HTML Hint to validate the HTML file
-        .pipe(htmlhint(htmlHintRules))
-        // Fail this task if there is an error
-        .pipe(htmlhint.failReporter())
-        // Copy app file to dist
-        .pipe(gulp.dest('dist'))
-        // Reload the dist file in the browser
-        .pipe(bs.stream());
 });
 
 // Tasks done to css files
