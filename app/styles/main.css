@@ -1,5 +1,6 @@
 p {
     max-width: 30em;
+    text-indent: 1.5em;
 }
 
 .header {
@@ -74,7 +75,3 @@ p {
         flex-basis: auto;
     }
 }
-
-/* TODO: Provide styling for the stories module after 1440 px */
-
-/* TODO: Provide styling for the portfolio and contact-us module after 425 px */
