@@ -50,6 +50,16 @@ p {
     text-align: center;
 }
 
+.contact-us {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-us h2 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
 @media only screen and (min-width: 425px) {
     .title {
         flex-grow: 1;
@@ -65,4 +75,6 @@ p {
     }
 }
 
-/* TODO Provide styling for the stories module after 1440 px width */
+/* TODO: Provide styling for the stories module after 1440 px */
+
+/* TODO: Provide styling for the portfolio and contact-us module after 425 px */
