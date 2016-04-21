@@ -3,7 +3,6 @@ var gulp = require('gulp');
 var bs = require('browser-sync').create();
 var nunjucksRender = require('gulp-nunjucks-render');
 var htmlhint = require('gulp-htmlhint');
-var csslint = require('gulp-csslint');
 var stylelint = require('gulp-stylelint');
 var jshint = require('gulp-jshint');
 var sort = require('gulp-sort');
@@ -104,10 +103,6 @@ gulp.task('css', ['css-lint'], function() {
 // Lint CSS files
 gulp.task('css-lint', function() {
     return gulp.src([ css, '!' + css.replace('/**/*.css', '/library/**/*.css') ])
-    // Use CSS Lint to validate this CSS file
-    .pipe(csslint())
-    // Fail this task if there is an error
-    .pipe(csslint.failReporter())
     // Use Stylelint to validate this CSS file
     .pipe(stylelint({ failAfterError: true }));
 });
