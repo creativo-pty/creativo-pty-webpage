@@ -10,7 +10,7 @@
     "website"
   ],
   "author": "Christopher Duncan <cj.duncan.a@gmail.com>",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/creativo-pty/creativo-pty-website/issues"
   },
