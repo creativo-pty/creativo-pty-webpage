@@ -7,8 +7,19 @@
         <a class="contact-button" href="">Please contact us!</a>
     </header>
     <main class="main">
-        <div class="story">
-            I tell awesome stories!
+        <div class="stories">
+            <h2>I tell awesome stories!</h2>
+            {% for i in range(0, 6) %}
+                <div class="story">
+                    <img src="http://placehold.it/300x300" alt="SVG Animation" />
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Aliquam at metus ante. Aenean vulputate nisi
+                        metus, sed aliquet sem consequat non. Vestibulum
+                        accumsan ullamcorper suscipit. Nulla a est mauris.
+                    </p>
+                </div>
+            {% endfor %}
         </div>
         <div class="portfolio">
             Here I would place my websites, if I had any...
