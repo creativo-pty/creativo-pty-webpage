@@ -104,7 +104,10 @@ gulp.task('css', ['css-lint'], function() {
 gulp.task('css-lint', function() {
     return gulp.src([ css, '!' + css.replace('/**/*.css', '/library/**/*.css') ])
     // Use Stylelint to validate this CSS file
-    .pipe(stylelint({ failAfterError: true }));
+    .pipe(stylelint({
+        failAfterError: true,
+        reporters: [ { formatter: 'string', console: true } ]
+    }));
 });
 
 // Tasks done to js files
