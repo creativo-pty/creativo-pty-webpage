@@ -2,7 +2,7 @@
 
 This is the code that powers the [Creativo PTY website][site].
 
-VersionEye: [![Dependency Status](https://www.versioneye.com/user/projects/57180f06fcd19a0051855f82/badge.svg?style=flat)](https://www.versioneye.com/user/projects/57180f06fcd19a0051855f82)
+VersionEye: [![Dependency Status](https://www.versioneye.com/user/projects/57180f06fcd19a0051855f82/badge.svg?style=flat)][versioneye]
 
 This website is currently under development. Up-to-date changes can be seen in
 the [`develop`][develop-branch] branch of this repository. To help with the
@@ -12,6 +12,7 @@ For any questions or comments, you can create a [new issue][new-issue] or head
 over to the [issue tab][issue] to view open and closed issues.
 
 [site]: http://creativopty.com "Creativo PTY"
+[versioneye]: https://www.versioneye.com/user/projects/57180f06fcd19a0051855f82 "VersionEye"
 [develop-branch]: https://github.com/creativo-pty/creativo-pty-website/tree/develop "Development Branch"
 [new-issue]: https://github.com/creativo-pty/creativo-pty-website/issues/new "New Issues"
 [issue]: https://github.com/creativo-pty/creativo-pty-website/issues "Issues"
