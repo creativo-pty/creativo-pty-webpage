@@ -5,7 +5,7 @@ This is the code that powers the [Creativo PTY website][site].
 VersionEye: [![Dependency Status](https://www.versioneye.com/user/projects/57180f06fcd19a0051855f82/badge.svg?style=flat)][versioneye]
 
 This website is currently under development. Up-to-date changes can be seen in
-the [`develop`][develop-branch] branch of this repository. To help with the
+the [`develop` branch][develop-branch] of this repository. To help with the
 development of this site, head over there.
 
 For any questions or comments, you can create a [new issue][new-issue] or head
