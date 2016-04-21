@@ -1,3 +1,8 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 p {
     max-width: 30em;
     text-indent: 1.5em;
@@ -20,6 +25,8 @@ p {
 }
 
 .main {
+    align-self: center;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
 }
@@ -39,6 +46,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0.5em;
 }
 
 .portfolio {
@@ -73,5 +81,11 @@ p {
 
     .contact-button {
         flex-basis: auto;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .main {
+        max-width: 1500px;
     }
 }
