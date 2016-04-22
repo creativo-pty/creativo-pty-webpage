@@ -26,7 +26,7 @@
     "gulp-nunjucks-render": "^2.0.0",
     "gulp-sort": "^2.0.0",
     "gulp-sourcemaps": "^2.0.0-alpha",
-    "gulp-stylelint": "^1.1.0",
+    "gulp-stylelint": "^2.0.0",
     "gulp-uncss": "^1.0.5",
     "jshint": "^2.9.2",
     "run-sequence": "^1.1.5"
