@@ -1,6 +1,20 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
     display: flex;
     flex-direction: column;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 p {
@@ -26,15 +40,16 @@ p {
 
 .main {
     align-self: center;
-    max-width: 1000px;
     display: flex;
     flex-direction: column;
 }
 
 .stories {
+    align-self: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    padding: 0.5em;
+    background-color: gainsboro;
 }
 
 .stories h2 {
@@ -43,10 +58,18 @@ p {
 }
 
 .story {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: 0.5em;
+    padding: 1em;
+    background-color: ghostwhite;
+}
+
+.story img {
+    margin: 0 auto;
+}
+
+.story p {
+    max-width: 18.75em;
+    margin-bottom: 0;
 }
 
 .portfolio {
@@ -69,7 +92,7 @@ p {
     text-align: center;
 }
 
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 22.75em) {
     .title {
         flex-grow: 1;
         flex-basis: auto;
@@ -82,10 +105,26 @@ p {
     .contact-button {
         flex-basis: auto;
     }
+
+    .stories {
+        max-width: 22.75em;
+    }
 }
 
-@media only screen and (min-width: 2000px) {
-    .main {
-        max-width: 1500px;
+@media only screen and (min-width: 44.5em) {
+    .stories {
+        max-width: 44.5em;
+    }
+}
+
+@media only screen and (min-width: 66.25em) {
+    .stories {
+        max-width: 66.25em;
+    }
+}
+
+@media only screen and (min-width: 131.5em) {
+    .stories {
+        max-width: 131.5em;
     }
 }
