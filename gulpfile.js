@@ -1,5 +1,6 @@
 // Modules used in this project.
 var gulp = require('gulp');
+var sequence = require('run-sequence');
 var bs = require('browser-sync').create();
 var nunjucksRender = require('gulp-nunjucks-render');
 var htmlhint = require('gulp-htmlhint');
@@ -43,6 +44,11 @@ var htmlHintRules = {
     "href-abs-or-rel": "rel",
     "attr-unsafe-chars": true
 };
+
+// Build web site from available content
+gulp.task('build', function() {
+    sequence('nunjucks', 'css', 'js');
+});
 
 // Setting up the Browser Sync server
 gulp.task('browserSync', function() {
