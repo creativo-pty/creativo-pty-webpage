@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var sequence = require('run-sequence');
 var bs = require('browser-sync').create();
 var nunjucksRender = require('gulp-nunjucks-render');
+var htmlmin = require('gulp-htmlmin');
 var htmlhint = require('gulp-htmlhint');
 var stylelint = require('gulp-stylelint');
 var jshint = require('gulp-jshint');
@@ -45,6 +46,16 @@ var htmlHintRules = {
     "href-abs-or-rel": "rel",
     "attr-unsafe-chars": true
 };
+var htmlMinOptions = {
+    'removeComments': true,
+    'removeCommentsFromCDATA': true,
+    'collapseWhitespace': true,
+    'collapseBooleanAttributes': true,
+    'removeRedundantAttributes': true,
+    'useShortDoctype': true,
+    'removeEmptyAttributes': true,
+    'removeOptionalTags': true
+};
 
 // Build web site from available content
 gulp.task('build', function() {
@@ -77,14 +88,34 @@ gulp.task('tunnel-sync', function() {
 
 // Defining what should happen if any file changes
 gulp.task('default', ['browser-sync'], function() {
+    // When a Nunjucks file changes
+    gulp.watch(njk, ['nunjucks']);
     // When a CSS file changes
     gulp.watch(css, ['css']);
     // When a JS file changes
     gulp.watch(js, ['js']);
-    // When a Nunjucks file changes
-    gulp.watch(njk, ['nunjucks']);
     // When an image changes
     gulp.watch(img, ['img']);
+});
+
+// Convert Nunjucks templates into HTML files
+gulp.task('nunjucks', function() {
+    return gulp.src(njk)
+        // Renders template with nunjucks
+        .pipe(nunjucksRender({
+            // Location of templates in the project
+            path: ['app/templates/']
+        }))
+        // Use HTML Hint to validate the HTML file
+        .pipe(htmlhint(htmlHintRules))
+        // Fail this task if there is an error
+        .pipe(htmlhint.failReporter())
+        // Minify HTML files
+        .pipe(htmlmin(htmlMinOptions))
+        // Output files into the dist folder
+        .pipe(gulp.dest('dist'))
+        // Reload the dist file in the browser
+        .pipe(bs.stream());
 });
 
 // Tasks done to css files
@@ -134,24 +165,6 @@ gulp.task('js', function() {
         .pipe(gulp.dest('dist/scripts'))
         // Reload the dist file in the browser
         .pipe(bs.stream());
-});
-
-// Convert Nunjucks templates into HTML files
-gulp.task('nunjucks', function() {
-    return gulp.src(njk)
-    // Renders template with nunjucks
-    .pipe(nunjucksRender({
-        // Location of templates in the project
-        path: ['app/templates/']
-    }))
-    // Use HTML Hint to validate the HTML file
-    .pipe(htmlhint(htmlHintRules))
-    // Fail this task if there is an error
-    .pipe(htmlhint.failReporter())
-    // Output files into the dist folder
-    .pipe(gulp.dest('dist'))
-    // Reload the dist file in the browser
-    .pipe(bs.stream());
 });
 
 // Move the images files from the app folder to the distribution folder
