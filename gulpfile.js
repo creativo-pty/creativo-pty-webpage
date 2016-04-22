@@ -17,6 +17,7 @@ var csso = require('gulp-csso');
 var css = 'app/styles/**/*.css';
 var js = 'app/scripts/*.js';
 var njk = 'app/templates/**/*.njk';
+var img = 'app/images/**/*.+(jpg|png)';
 
 // Dictionaries that are used in more than one place
 var htmlHintRules = {
@@ -47,7 +48,7 @@ var htmlHintRules = {
 
 // Build web site from available content
 gulp.task('build', function() {
-    sequence('nunjucks', 'css', 'js');
+    sequence('nunjucks', 'img', 'css', 'js');
 });
 
 // Setting up the Browser Sync server
@@ -82,6 +83,8 @@ gulp.task('default', ['browserSync'], function() {
     gulp.watch(js, ['js']);
     //When a Nunjucks file changes
     gulp.watch(njk, ['nunjucks']);
+    // When an image changes
+    gulp.watch(img, ['img']);
 });
 
 // Tasks done to css files
@@ -149,5 +152,15 @@ gulp.task('nunjucks', function() {
     // Output files into the dist folder
     .pipe(gulp.dest('dist'))
     // Reload the dist file in the browser
+    .pipe(bs.stream());
+});
+
+// Move the images files from the app folder to the distribution folder
+gulp.task('img', function() {
+    // Get the images from the app folder
+    return gulp.src(img)
+    // Output images into the distribution folder
+    .pipe(gulp.dest('dist/images'))
+    // Reload the distribution file in the browser
     .pipe(bs.stream());
 });
