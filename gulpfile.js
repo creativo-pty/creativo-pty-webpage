@@ -52,7 +52,7 @@ gulp.task('build', function() {
 });
 
 // Setting up the Browser Sync server
-gulp.task('browserSync', function() {
+gulp.task('browser-sync', function() {
     bs.init({
         // Server base directory
         server:                 'dist',
@@ -62,7 +62,7 @@ gulp.task('browserSync', function() {
 });
 
 // Setting up the Browser Sync server
-gulp.task('bsTunnel', function() {
+gulp.task('tunnel-sync', function() {
     bs.init({
         // Server base directory
         server:                 'dist',
@@ -76,7 +76,7 @@ gulp.task('bsTunnel', function() {
 });
 
 // Defining what should happen if any file changes
-gulp.task('default', ['browserSync'], function() {
+gulp.task('default', ['browser-sync'], function() {
     // When a CSS file changes
     gulp.watch(css, ['css']);
     // When a JS file changes
