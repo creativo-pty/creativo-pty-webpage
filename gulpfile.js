@@ -81,7 +81,7 @@ gulp.task('default', ['browser-sync'], function() {
     gulp.watch(css, ['css']);
     // When a JS file changes
     gulp.watch(js, ['js']);
-    //When a Nunjucks file changes
+    // When a Nunjucks file changes
     gulp.watch(njk, ['nunjucks']);
     // When an image changes
     gulp.watch(img, ['img']);
@@ -138,8 +138,7 @@ gulp.task('js', function() {
 
 // Convert Nunjucks templates into HTML files
 gulp.task('nunjucks', function() {
-    // Gets .html, .nunjucks, and .njk files in templates
-    return gulp.src('app/templates/**/*.+(html|nunjucks|njk)')
+    return gulp.src(njk)
     // Renders template with nunjucks
     .pipe(nunjucksRender({
         // Location of templates in the project
