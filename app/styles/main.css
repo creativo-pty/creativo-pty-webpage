@@ -44,6 +44,10 @@ p {
     flex-direction: column;
 }
 
+.about-us {
+    align-self: center;
+}
+
 .stories {
     align-self: center;
     display: flex;
