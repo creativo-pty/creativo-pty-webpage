@@ -1,6 +1,25 @@
 <div class="portfolio">
-    <h2>Portfolio</h2>
-    <p>
-        Here I would place my websites, if I had any...
-    </p>
+    <h2>Look at what I've done!</h2>
+    {% for i in range(0, 4) %}
+        <figure class="portfolio-item">
+            <img src="/images/474-golden-ratio.png" alt="Website" width="474" height="293" />
+            <figcaption>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Aliquam at metus ante. Aenean vulputate nisi
+                    metus, sed aliquet sem consequat non. Vestibulum
+                    accumsan ullamcorper suscipit. Nulla a est mauris.
+                </p>
+                <p>
+                    Fusce eget est diam. Cras sed hendrerit nulla. Sed
+                    auctor vulputate lorem sit amet commodo. Nulla
+                    vulputate iaculis faucibus. Quisque imperdiet turpis
+                    tempor leo suscipit, non vestibulum felis commodo.
+                    Vivamus ac turpis id est placerat dignissim
+                    tincidunt eu justo. Aliquam porttitor tincidunt
+                    turpis id maximus.
+                </p>
+            </figcaption>
+        </figure>
+    {% endfor %}
 </div>

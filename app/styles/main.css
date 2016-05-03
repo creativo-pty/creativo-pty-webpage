@@ -76,13 +76,32 @@ p {
 }
 
 .portfolio {
+    align-self: center;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: gainsboro;
 }
 
 .portfolio h2 {
     flex-basis: 100%;
     text-align: center;
+}
+
+.portfolio-item {
+    margin: 0.5em;
+    padding: 1em;
+    background-color: ghostwhite;
+}
+
+.portfolio-item img {
+    margin: 0 auto;
+}
+
+.portfolio-item figcaption {
+    max-width: 29.625em;
+    margin-top: 0.5em;
 }
 
 .contact-us {
@@ -114,6 +133,12 @@ p {
     }
 }
 
+@media only screen and (min-width: 33.625em) {
+    .portfolio {
+        max-width: 33.625em;
+    }
+}
+
 @media only screen and (min-width: 44.5em) {
     .stories {
         max-width: 44.5em;
@@ -121,13 +146,13 @@ p {
 }
 
 @media only screen and (min-width: 66.25em) {
-    .stories {
+    .stories, .portfolio {
         max-width: 66.25em;
     }
 }
 
 @media only screen and (min-width: 131.5em) {
-    .stories {
+    .stories, .portfolio {
         max-width: 131.5em;
     }
 }
