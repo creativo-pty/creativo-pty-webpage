@@ -106,10 +106,6 @@ gulp.task('nunjucks', function() {
             // Location of templates in the project
             path: ['app/templates/']
         }))
-        // Use HTML Hint to validate the HTML file
-        .pipe(htmlhint(htmlHintRules))
-        // Fail this task if there is an error
-        .pipe(htmlhint.failReporter())
         // Minify HTML files
         .pipe(htmlmin(htmlMinOptions))
         // Output files into the dist folder
