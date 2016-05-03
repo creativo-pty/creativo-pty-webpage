@@ -126,7 +126,11 @@ p {
     background-color: ghostwhite;
 }
 
-.stories, .portfolio, .contact-us {
+.footer {
+    background-color: gainsboro;
+}
+
+.stories, .portfolio, .contact-us, .footer {
     margin-top: 1em;
 }
 
