@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}Creativo PTY{% endblock %}</title>
+        <link rel="stylesheet" href="/styles/main.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="title">Creativo PTY</h1>
+            <img class="logo" src="/images/abstract-logo100.jpg" alt="Logo" />
+            <a class="contact-button" href="">Please contact us!</a>
+        </header>
+        {% block content %} {% endblock %}
+        <footer class="footer">
+            <h2>Footer</h2>
+            <p>
+                You have to scroll down here for all the awesome stuff.
+            </p>
+        </footer>
+    </body>
+</html>

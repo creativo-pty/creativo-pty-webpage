@@ -1,0 +1,158 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    max-width: 30em;
+    text-indent: 1.5em;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title {
+    flex-basis: 100vw;
+}
+
+.contact-button {
+    flex-basis: 100vw;
+    text-align: center;
+}
+
+.main {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us {
+    align-self: center;
+}
+
+.stories {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5em;
+    background-color: gainsboro;
+}
+
+.stories h2 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.story {
+    margin: 0.5em;
+    padding: 1em;
+    background-color: ghostwhite;
+}
+
+.story img {
+    margin: 0 auto;
+}
+
+.story figcaption {
+    max-width: 18.75em;
+    margin-top: 0.5em;
+}
+
+.portfolio {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: gainsboro;
+}
+
+.portfolio h2 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.portfolio-item {
+    margin: 0.5em;
+    padding: 1em;
+    background-color: ghostwhite;
+}
+
+.portfolio-item img {
+    margin: 0 auto;
+}
+
+.portfolio-item figcaption {
+    max-width: 29.625em;
+    margin-top: 0.5em;
+}
+
+.contact-us {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-us h2 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+@media only screen and (min-width: 22.75em) {
+    .title {
+        flex-grow: 1;
+        flex-basis: auto;
+    }
+
+    .logo {
+        order: -1;
+    }
+
+    .contact-button {
+        flex-basis: auto;
+    }
+
+    .stories {
+        max-width: 22.75em;
+    }
+}
+
+@media only screen and (min-width: 33.625em) {
+    .portfolio {
+        max-width: 33.625em;
+    }
+}
+
+@media only screen and (min-width: 44.5em) {
+    .stories {
+        max-width: 44.5em;
+    }
+}
+
+@media only screen and (min-width: 66.25em) {
+    .stories, .portfolio {
+        max-width: 66.25em;
+    }
+}
+
+@media only screen and (min-width: 131.5em) {
+    .stories, .portfolio {
+        max-width: 131.5em;
+    }
+}
