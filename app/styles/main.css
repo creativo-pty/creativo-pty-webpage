@@ -87,7 +87,6 @@ p {
     align-self: center;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 1em;
     padding: 0.5em;
     background-color: gainsboro;
 }
@@ -120,6 +119,10 @@ p {
 .contact-us h2 {
     flex-basis: 100%;
     text-align: center;
+}
+
+.stories, .portfolio, .contact-us {
+    margin-top: 1em;
 }
 
 @media only screen and (min-width: 22.75em) {
