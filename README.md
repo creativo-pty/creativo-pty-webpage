@@ -22,11 +22,12 @@ is over, you can again check if you have Git running by entering `git --version`
 in the CLI console. If you are new to Git, you can read [this guide][git-guide]
 or you can [follow this fifteen minute tutorial][git-tutorial].
 
-3.  **Clone this Repository**: You can follow [this guide][clone-repository] to
-learn how to clone a repository from GitHub. In the CLI console, move the
-current working directory to where you want to clone this repository to. You can
-check the command required to do this in [the guide][setup-console] about
-setting up the console from before.
+3.  **Fork this Repository**: First, click on the **Fork** button at the top of
+this repository, then you can follow [this guide][clone-repository] to learn how
+to clone the repository from GitHub. In the CLI console, move the current
+working directory to where you want to clone this repository to. You can check
+the command required to do this in [the guide][setup-console] about setting up
+the console from before.
 
 4.  **Install Node.js and NPM**: First, check if you have [Node.js][node]
 installed by running `node -v` in the CLI console. If anything but the version
