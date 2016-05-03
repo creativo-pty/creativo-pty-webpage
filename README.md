@@ -41,15 +41,12 @@ repository you cloned earlier \(either _creativo-pty-website_ or another name
 you chose\) and run `npm install`. This will create a local environment to
 download the Node modules needed to build the web site.
 
-6.  **Build the Site for the First Time**: In the CLI console, run `gulp build`.
-This command will grab all of the source files in the _app_ folder, convert
-them into the web site, and store the resulting files in the _dist_ folder.
-
-7.  **Run a Local Server to see the Site**: In the CLI console, run `gulp`. In
-a moment, your browser should open with the web site in view. If you change any
-file in the _app_ folder, the application will automatically update the
-corresponding file in the _dist_ folder and update your view of the web site in
-the browser.
+6.  **Run a Local Server to see the Site**: In the CLI console, run `gulp`. This
+command will grab all of the source files in the _app_ folder, convert them into
+the web site, and store the resulting files in the _dist_ folder. In a moment,
+your browser should open with the web site in view. If you change any file in
+the _app_ folder, the application will automatically update the corresponding
+file in the _dist_ folder and update your view of the web site in the browser.
 
 For any questions or comments, you can create a [new issue][new-issue] or head
 over to the [issue tab][issue] to view open and closed issues.

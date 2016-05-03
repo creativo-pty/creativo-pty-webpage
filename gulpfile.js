@@ -87,7 +87,7 @@ gulp.task('tunnel-sync', function() {
 });
 
 // Defining what should happen if any file changes
-gulp.task('default', ['browser-sync'], function() {
+gulp.task('default', ['browser-sync', 'build'], function() {
     // When a Nunjucks file changes
     gulp.watch(njk, ['nunjucks']);
     // When a CSS file changes
