@@ -33,8 +33,16 @@ p {
 }
 
 .contact-button {
-    flex-basis: 100vw;
+    display: block;
+    color: white;
+    background-color: gray;
+    text-transform: uppercase;
+    text-decoration: none;
     text-align: center;
+    font-weight: bold;
+    align-self: center;
+    margin: 1em;
+    padding: 1em;
 }
 
 .main {
