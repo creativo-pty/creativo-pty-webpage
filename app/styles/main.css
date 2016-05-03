@@ -113,12 +113,17 @@ p {
 
 .contact-us {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: gainsboro;
 }
 
 .contact-us h2 {
-    flex-basis: 100%;
     text-align: center;
+}
+
+.contact-us-form {
+    margin: 1em;
+    background-color: ghostwhite;
 }
 
 .stories, .portfolio, .contact-us {

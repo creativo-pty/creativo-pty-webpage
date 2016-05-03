@@ -1,6 +1,21 @@
 <div id="contact-us" class="contact-us">
     <h2>Contact Us</h2>
-    <p>
-        You still have not contacted us? This is your opportunity!
-    </p>
+    <form action="mailto:contacto@creativopty.com" class="contact-us-form" method="post" enctype="text/plain">
+        <fieldset>
+            <legend>Name:</legend>
+            <input type="text" name="name">
+        </fieldset>
+        <fieldset>
+            <legend>Email:</legend>
+            <input type="email" name="email">
+        </fieldset>
+        <fieldset>
+            <legend>Message:</legend>
+            <textarea name="message" rows="8" cols="40"></textarea>
+        </fieldset>
+        <fieldset>
+            <input type="submit" value="Send Message">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
 </div>
