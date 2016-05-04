@@ -7,7 +7,7 @@ VersionEye: [![Dependency Status](https://www.versioneye.com/user/projects/57180
 ## First Time
 
 Follow these instructions to view the web site for the first time from your
-computer. If you have already cloned a repository from GitHub before, you can
+computer. If you have already forked this repository, you can
 **skip to step \#4**. If you have already used Node.js before, then you can
 **skip to step \#5**.
 
