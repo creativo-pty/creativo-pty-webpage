@@ -2,7 +2,7 @@
 
 This is the code that powers the [Creativo PTY website][site].
 
-VersionEye: [![Dependency Status](https://www.versioneye.com/user/projects/57180f06fcd19a0051855f82/badge.svg?style=flat)][versioneye]
+VersionEye: [![Dependency Status](https://www.versioneye.com/user/projects/5728e300a0ca35004baf7cc0/badge.svg?style=flat)][versioneye]
 
 ## First Time
 
@@ -53,7 +53,7 @@ For any questions or comments, you can create a [new issue][new-issue] or head
 over to the [issue tab][issue] to view open and closed issues.
 
 [site]: http://creativopty.com "Creativo PTY"
-[versioneye]: https://www.versioneye.com/user/projects/57180f06fcd19a0051855f82 "VersionEye"
+[versioneye]: https://www.versioneye.com/user/projects/5728e300a0ca35004baf7cc0 "VersionEye"
 [setup-console]: http://cli.learncodethehardway.org/book/ex1.html "The Command Line Crash Course"
 [git]: https://git-scm.com/ "Git: Free, Open Source, Distributed VCS"
 [install-git]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "Installing Git"
