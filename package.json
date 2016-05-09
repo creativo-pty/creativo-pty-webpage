@@ -23,7 +23,7 @@
     "gulp-csso": "^2.0.0",
     "gulp-htmlhint": "^0.3.1",
     "gulp-htmlmin": "^2.0.0",
-    "gulp-jshint": "^2.0.0",
+    "gulp-jshint": "^2.0.1",
     "gulp-nunjucks-render": "^2.0.0",
     "gulp-sort": "^2.0.0",
     "gulp-sourcemaps": "^2.0.0-alpha",
