@@ -4,6 +4,9 @@ This is the code that powers the [Creativo PTY website][site].
 
 VersionEye: [![Dependency Status](https://www.versioneye.com/user/projects/5728e300a0ca35004baf7cc0/badge.svg?style=flat)][versioneye]
 
+Tested in [Node.js v4.4.*][node]
+In Windows, [Gulp CLI][gulp-cli] is needed
+
 ## First Time
 
 Follow these instructions to view the web site for the first time from your
@@ -32,15 +35,16 @@ the console from before.
 4.  **Install Node.js and NPM**: First, check if you have [Node.js][node]
 installed by running `node -v` in the CLI console. If anything but the version
 of Node appeared, then you can follow [these instructions][install-node] to
-install it. Once the process is over, you can again check if you have Node
-running by entering `node -v` in the CLI console. Those same instructions show
-that Node comes with [the Node Package Manager (NPM)][npm]. We will be using
-this to manage the application packages.
+install Node v4.4.\*. Once the process is over, you can again check if you have
+Node running by entering `node -v` in the CLI console. Those same instructions
+show that Node comes with [the Node Package Manager (NPM)][npm]. We will be
+using this to manage the application packages.
 
 5.  **Install the NPM Packages**: In the CLI console, move to inside the
 repository you cloned earlier \(either _creativo-pty-website_ or another name
 you chose\) and run `npm install`. This will create a local environment to
-download the Node modules needed to build the web site.
+download the Node modules needed to build the web site. If running Windows, also
+install [Gulp CLI][gulp-cli] with the command: `npm i -g gulp-cli`
 
 6.  **Run a Local Server to see the Site**: In the CLI console, run `gulp`. This
 command will grab all of the source files in the _app_ folder, convert them into
@@ -54,13 +58,14 @@ over to the [issue tab][issue] to view open and closed issues.
 
 [site]: http://creativopty.com "Creativo PTY"
 [versioneye]: https://www.versioneye.com/user/projects/5728e300a0ca35004baf7cc0 "VersionEye"
+[node]: https://nodejs.org/ "Node.js"
+[gulp-cli]: https://github.com/gulpjs/gulp-cli "Gulp CLI"
 [setup-console]: http://cli.learncodethehardway.org/book/ex1.html "The Command Line Crash Course"
 [git]: https://git-scm.com/ "Git: Free, Open Source, Distributed VCS"
 [install-git]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "Installing Git"
 [git-guide]: https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control "Getting Started with Git"
 [git-tutorial]: https://try.github.io/levels/1/challenges/1 "Try Git at Code School"
 [clone-repository]: https://help.github.com/articles/cloning-a-repository/ "Cloning a Repository"
-[node]: https://nodejs.org/ "Node.js"
 [install-node]: https://docs.npmjs.com/getting-started/installing-node "Installing Node"
 [npm]: https://www.npmjs.com/ "Node Package Manager"
 [new-issue]: https://github.com/creativo-pty/creativo-pty-website/issues/new "New Issues"
