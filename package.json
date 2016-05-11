@@ -16,7 +16,7 @@
   },
   "homepage": "http://github.com/creativo-pty/creativo-pty-website#readme",
   "devDependencies": {
-    "browser-sync": "^2.12.4",
+    "browser-sync": "^2.12.7",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
